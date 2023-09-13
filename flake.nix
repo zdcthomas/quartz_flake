@@ -21,7 +21,9 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    templates.default = self;
+    templates.default = {
+      description = "Quartz static site generation flake";
+    };
     packages.${system} = rec {
       default = pkgs.buildNpmPackage {
         name = "quartz";
