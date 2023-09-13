@@ -1,0 +1,59 @@
+{
+  "nodes": {
+    "content": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-TfvOTMGsVW2gvt3UcsPlmmWMvkf/pvJ4SwK4eYxPJnY=",
+        "path": "./content/",
+        "type": "path"
+      },
+      "original": {
+        "path": "./content/",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1694422566,
+        "narHash": "sha256-lHJ+A9esOz9vln/3CJG23FV6Wd2OoOFbDeEs4cMGMqc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3a2786eea085f040a66ecde1bc3ddc7099f6dbeb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "quartz-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1694629733,
+        "narHash": "sha256-I2joZA5Zj2wrrPog75m0iRlrr1fajrpdjifwXUfqHZs=",
+        "owner": "jackyzha0",
+        "repo": "quartz",
+        "rev": "cce389c81d262d1d2a2bd8140c879efd68e3c6dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jackyzha0",
+        "ref": "v4",
+        "repo": "quartz",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "content": "content",
+        "nixpkgs": "nixpkgs",
+        "quartz-src": "quartz-src"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

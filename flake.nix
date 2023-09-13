@@ -1,11 +1,13 @@
 {
-  description = "A very basic flake";
-
+  description = "Quartz static site";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-    quartz = {
+    quartz-src = {
       url = "github:jackyzha0/quartz/v4";
+      flake = false;
+    };
+    content = {
+      url = "path:./content/";
       flake = false;
     };
   };
@@ -13,29 +15,30 @@
   outputs = {
     self,
     nixpkgs,
-    flake-utils,
-    quartz,
-  }:
-    flake-utils.lib.eachDefaultSystem
-    (
-      system: let
-        overlays = [];
-        pkgs = import nixpkgs {
-          inherit system overlays;
-        };
-      in {
-        packages.quartz = pkgs.stdenv.mkDerivation rec {
-          pname = "quartz";
-          src = quartz;
-          buildInputs = with pkgs; [
-            nodejs_20
-          ];
-          content = ./content
-          buildPhase = ''
-            npm i
-            npx quartz build
-          '';
-        };
-      }
-    );
+    quartz-src,
+    content,
+  }: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    # templates.${system}.default = self;
+    packages.${system} = rec {
+      default = pkgs.buildNpmPackage {
+        name = "quartz";
+        npmDepsHash = "sha256-NKrAfbPyhCYascM+p5M+o3GUw65RuspRMNmaxcOE68Y=";
+        src = quartz-src;
+        dontNpmBuild = true;
+
+        installPhase = ''
+          runHook preInstall
+          npmInstallHook
+          cd $out/lib/node_modules/@jackyzha0/quartz
+          cp ${content}/* ./content
+          $out/bin/quartz build
+          mv ./public $out/public
+          runHook postInstall
+        '';
+      };
+    };
+  };
 }
