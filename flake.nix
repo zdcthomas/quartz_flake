@@ -21,7 +21,7 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    # templates.${system}.default = self;
+    templates.default = self;
     packages.${system} = rec {
       default = pkgs.buildNpmPackage {
         name = "quartz";
