@@ -18,6 +18,42 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1656928814,
+        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "language-servers": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1673891911,
+        "narHash": "sha256-ayBHJQpJItWrUsTy/uFDFRkDuaGTkGn4Y7Xka35rFY0=",
+        "ref": "refs/heads/master",
+        "rev": "be9c9b24c0fce29baaaf6b0f5cb4dd3cacad83ad",
+        "revCount": 9,
+        "type": "git",
+        "url": "https://git.sr.ht/~bwolf/language-servers.nix"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.sr.ht/~bwolf/language-servers.nix"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1694422566,
@@ -54,6 +90,7 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "language-servers": "language-servers",
         "nixpkgs": "nixpkgs",
         "quartz-src": "quartz-src"
       }
