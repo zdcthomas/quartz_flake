@@ -1,5 +1,16 @@
 # Quartz flake
 
+## Usage
+
+With nix installed, and flakes enabled. From inside inside your directory with `./content`:
+
+```sh
+nix flake init -t github:zdcthomas/quartz_flake
+nix build
+```
+
+## What is this?
+
 The purpose of this flake system is to make it easier to build a static site
 with the Quartz Static Site generator. This way, builds can be reproducible
 against either the master version of Quartz, or against a public fork you
