@@ -6,10 +6,6 @@
       url = "github:jackyzha0/quartz/v4";
       flake = false;
     };
-    content = {
-      url = "path:./content/";
-      flake = false;
-    };
   };
 
   outputs = {
