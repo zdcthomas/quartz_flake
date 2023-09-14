@@ -22,6 +22,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     templates.default = {
+      path = ./.;
       description = "Quartz static site generation flake";
     };
     packages.${system} = rec {
