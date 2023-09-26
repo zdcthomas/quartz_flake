@@ -33,6 +33,8 @@
               runHook preInstall
               npmInstallHook
               cd $out/lib/node_modules/@jackyzha0/quartz
+              rm -rf ./content
+              mkdir content
               cp -r ${./content}/* ./content
               $out/bin/quartz build
               mv ./public $out/public
