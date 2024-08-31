@@ -73,11 +73,11 @@
     "quartz-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1694629733,
-        "narHash": "sha256-I2joZA5Zj2wrrPog75m0iRlrr1fajrpdjifwXUfqHZs=",
+        "lastModified": 1724874625,
+        "narHash": "sha256-POdUD8ct1Zfe2gKQW2V5ZM0f9xPfZ3Nh3kcWe6K/lh8=",
         "owner": "jackyzha0",
         "repo": "quartz",
-        "rev": "cce389c81d262d1d2a2bd8140c879efd68e3c6dd",
+        "rev": "6715079a8908e8807291415eb3dee506574b5459",
         "type": "github"
       },
       "original": {
